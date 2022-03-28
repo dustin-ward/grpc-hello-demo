@@ -17,6 +17,7 @@ func shutdown(s *grpc.Server) {
 	for !(input == "stop" || input == "STOP") {
 		fmt.Scanln(&input)
 	}
+	log.Println("Shutting down server...")
 	s.GracefulStop()
 	os.Exit(0)
 }
