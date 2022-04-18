@@ -3,10 +3,10 @@ package chat;
 
 option go_package = "../chat";
 
-message Message {
+message TextMessage {
     string body = 1;
 }
 
 service ChatService {
-    rpc SayHello(Message) returns (Message) {}
+    rpc SayHello(TextMessage) returns (TextMessage) {}
 }

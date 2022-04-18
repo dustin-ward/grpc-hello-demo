@@ -10,7 +10,7 @@ import (
 
 func main() {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":9000", grpc.WithInsecure())
+	conn, err := grpc.Dial("zoscan2b.pok.stglabs.ibm.com:9321", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Dial: %v", err)
 	}
@@ -18,7 +18,7 @@ func main() {
 
 	c := chat.NewChatServiceClient(conn)
 
-	message := chat.Message{
+	message := chat.TextMessage{
 		Body: "Hello from Golang client",
 	}
 

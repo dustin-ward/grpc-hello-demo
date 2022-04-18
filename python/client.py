@@ -8,7 +8,7 @@ import chat_pb2_grpc
 
 
 def run():
-    with grpc.insecure_channel('localhost:9000') as channel:
+    with grpc.insecure_channel('zoscan2b.pok.stglabs.ibm.com:9000') as channel:
         stub = chat_pb2_grpc.ChatServiceStub(channel)
         response = stub.SayHello(chat_pb2.Message(body='Hello from Python client'))
     print("Message received: " + response.body)

@@ -14,7 +14,7 @@ var packageDefinition = protoLoader.loadSync(
 var chat_proto = grpc.loadPackageDefinition(packageDefinition).chat;
 
 function main() {
-  var target = 'localhost:9000';
+  var target = 'zoscan2b.pok.stglabs.ibm.com:9000';
 
   var client = new chat_proto.ChatService(target, grpc.credentials.createInsecure());
 
